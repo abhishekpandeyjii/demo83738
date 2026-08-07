@@ -45,9 +45,10 @@
       Customer App</button>
     <button class="module-tab" onclick="switchModule('workflow', this)"><span class="tab-icon">🔄</span> Approval
       Workflows</button>
-        <button class="module-tab" onclick="switchModule('inspection', this)"><span class="tab-icon">🛡️</span> Module 5 —
+    <button class="module-tab" onclick="switchModule('inspection', this)"><span class="tab-icon">🛡️</span> Module 5 —
       Inspection</button>
-    <button class="module-tab" onclick="switchModule('topselling', this)"><span class="tab-icon">📈</span> Module 6 — Market Leaders</button>
+    <button class="module-tab" onclick="switchModule('topselling', this)"><span class="tab-icon">📈</span> Module 6 —
+      Market Leaders</button>
   </div>
 
   <!-- ╔════════════════════════════════════════════════════════════╗
@@ -3153,7 +3154,6 @@
 
     </div>
   </div>
-
   <!-- ╔════════════════════════════════════════════════════════════╗
      ║  MODULE 5 — INSPECTION REPORT                            ║
      ╚════════════════════════════════════════════════════════════╝ -->
@@ -3165,532 +3165,226 @@
           <div class="flow-label-text">Car Inspection Report</div>
           <div class="flow-label-sub">Role-based view: Editable by Admin/Dealer, Read-only for Customer</div>
         </div>
-        <div class="role-toggle-bar"
-          style="margin-left:auto; display:flex; gap:8px; background:var(--card-bg); padding:4px; border-radius:8px; border:1px solid var(--glass-border);">
-          <button class="role-btn active" onclick="toggleRole('edit', this)"
-            style="padding:6px 12px; border-radius:6px; border:none; background:var(--blue); color:#fff; cursor:pointer; font-weight:600; font-size:12px;">👑
-            Admin / 🏪 Dealer (Edit)</button>
-          <button class="role-btn" onclick="toggleRole('view', this)"
-            style="padding:6px 12px; border-radius:6px; border:none; background:transparent; color:var(--text2); cursor:pointer; font-weight:600; font-size:12px;">👤
-            Customer (View)</button>
+        <div class="role-toggle-bar" style="margin-left:auto; display:flex; gap:8px; background:var(--card-bg); padding:4px; border-radius:8px; border:1px solid var(--glass-border);">
+          <button class="role-btn active" onclick="toggleRole('edit', this)" style="padding:6px 12px; border-radius:6px; border:none; background:var(--blue); color:#fff; cursor:pointer; font-weight:600; font-size:12px;">&#128081; Admin / &#127978; Dealer (Edit)</button>
+          <button class="role-btn" onclick="toggleRole('view', this)" style="padding:6px 12px; border-radius:6px; border:none; background:transparent; color:var(--text2); cursor:pointer; font-weight:600; font-size:12px;">&#128100; Customer (View)</button>
         </div>
       </div>
 
       <div class="phones-row role-edit" id="inspection-view-container">
 
-        <!-- Screen 1: Car Inspection Summary -->
+        <!-- Screen 1: Dealer Request Inspection -->
         <div>
           <div class="phone" style="background:#F8FAFC;">
             <div class="screen-badge">#1</div>
-            <div class="status-bar" style="color:#0F172A;"><span>9:41</span>
-              <div class="status-icons">📶 🔋 100%</div>
+            <div class="status-bar" style="color:#0F172A;"><span>9:41</span><div class="status-icons">&#128246; &#128267; 100%</div></div>
+            <div class="page-header" style="background:#1E3A5F; color:#fff;">
+              <div class="back-btn" style="color:#fff;">&#8592;</div>
+              <span class="header-title" style="color:#fff;">Request Inspection</span>
+              <span class="header-right">&#127978;</span>
             </div>
-
-            <div class="page-header" style="background:#fff; border-bottom:1px solid #E2E8F0; color:#0F172A;">
-              <div class="back-btn" style="color:#0F172A;">←</div><span class="header-title">Car Inspection</span><span
-                class="header-right" style="color:#991B1B;">🛡️</span>
-            </div>
-
-            <div class="screen-body"
-              style="background:#F8FAFC; padding:12px; color:#334155; overflow-y:auto; height: 100%;">
-
-              <!-- Car Summary Card -->
-              <div class="ins-card"
-                style="background:#fff; border-radius:12px; padding:12px; display:flex; gap:12px; box-shadow:0 2px 4px rgba(0,0,0,0.05); margin-bottom:12px; border:1px solid #E2E8F0;">
-                <div style="width:100px; height:70px; background:#E2E8F0; border-radius:8px; overflow:hidden;"><img
-                    src="bg.png" style="width:100%; height:100%; object-fit:cover;"></div>
+            <div class="screen-body" style="background:#F0F4FF; padding:10px; overflow-y:auto; height:100%; color:#0F172A;">
+              <div style="background:linear-gradient(135deg,#1E3A5F,#2563EB); border-radius:10px; padding:10px; margin-bottom:10px; color:#fff; display:flex; align-items:center; gap:8px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; font-size:18px;">&#127978;</div>
+                <div>
+                  <div style="font-weight:700; font-size:12px;">Sharma Motors Pvt Ltd</div>
+                  <div style="font-size:9px; opacity:0.8;">Dealer ID: DLR-00182 &bull; Connaught Place, Delhi</div>
+                </div>
+              </div>
+              <div style="background:#fff; border-radius:10px; padding:10px; margin-bottom:10px; border:1px solid #E2E8F0; display:flex; gap:10px; align-items:center;">
+                <div style="width:70px; height:50px; background:#E2E8F0; border-radius:6px; overflow:hidden; flex-shrink:0;"><img src="bg.png" style="width:100%;height:100%;object-fit:cover;"></div>
                 <div style="flex:1;">
-                  <div style="font-weight:700; font-size:14px; color:#0F172A;">Toyota Fortuner</div>
-                  <div style="font-size:11px; color:#64748B; margin-bottom:4px;">2.8 4x2 AT</div>
-                  <div style="display:flex; gap:4px; margin-bottom:4px;">
-                    <span style="background:#F1F5F9; padding:2px 6px; border-radius:4px; font-size:9px;">2021</span>
-                    <span style="background:#F1F5F9; padding:2px 6px; border-radius:4px; font-size:9px;">Diesel</span>
-                    <span style="background:#F1F5F9; padding:2px 6px; border-radius:4px; font-size:9px;">32.4k KM</span>
-                  </div>
-                  <div style="font-size:9px; color:#64748B;">VIN: MB1KA3FS0... <span style="cursor:pointer">📋</span>
-                  </div>
+                  <div style="font-weight:700; font-size:13px; color:#0F172A;">Toyota Fortuner</div>
+                  <div style="font-size:10px; color:#64748B;">2021 &bull; Diesel &bull; 32,450 KM</div>
+                  <div style="font-size:9px; color:#94A3B8;">DL 8C AB 1234 &bull; VIN: MB1KA3FS0M...</div>
+                </div>
+                <div style="background:#DCFCE7; color:#166534; padding:3px 7px; border-radius:6px; font-size:9px; font-weight:700; flex-shrink:0;">In Stock</div>
+              </div>
+              <div style="background:#fff; border-radius:10px; padding:10px; margin-bottom:10px; border:1px solid #E2E8F0;">
+                <div style="font-weight:700; font-size:11px; color:#0F172A; margin-bottom:8px;">&#128203; Inspection Request Details</div>
+                <div style="margin-bottom:8px;"><label style="font-size:9px; color:#64748B; font-weight:600; text-transform:uppercase;">Request Type</label><select style="width:100%; margin-top:3px; padding:6px 8px; border-radius:6px; border:1px solid #CBD5E1; font-size:11px; color:#0F172A; background:#fff;"><option>Full Inspection (140 Points)</option><option>Quick Inspection (60 Points)</option><option>Body Only Inspection</option><option>Mechanical Only</option></select></div>
+                <div style="margin-bottom:8px;"><label style="font-size:9px; color:#64748B; font-weight:600; text-transform:uppercase;">Preferred Date</label><input type="date" value="2026-08-10" style="width:100%; margin-top:3px; padding:6px 8px; border-radius:6px; border:1px solid #CBD5E1; font-size:11px;"></div>
+                <div style="margin-bottom:8px;"><label style="font-size:9px; color:#64748B; font-weight:600; text-transform:uppercase;">Priority</label><div style="display:flex; gap:6px; margin-top:4px;"><div style="flex:1; text-align:center; padding:6px; border-radius:6px; border:2px solid #F59E0B; background:#FFFBEB; font-size:9px; font-weight:700; color:#B45309; cursor:pointer;">&#9889; URGENT</div><div style="flex:1; text-align:center; padding:6px; border-radius:6px; border:2px solid #2563EB; background:#EFF6FF; font-size:9px; font-weight:700; color:#2563EB; cursor:pointer;">&#128336; NORMAL</div><div style="flex:1; text-align:center; padding:6px; border-radius:6px; border:2px solid #E2E8F0; background:#F8FAFC; font-size:9px; font-weight:600; color:#94A3B8; cursor:pointer;">&#128197; SCHEDULE</div></div></div>
+                <div><label style="font-size:9px; color:#64748B; font-weight:600; text-transform:uppercase;">Notes to Admin</label><textarea rows="2" style="width:100%; margin-top:3px; padding:6px 8px; border-radius:6px; border:1px solid #CBD5E1; font-size:10px; resize:none;">Please check front bumper and left side doors carefully.</textarea></div>
+              </div>
+              <div style="background:#fff; border-radius:10px; padding:10px; margin-bottom:10px; border:1px solid #E2E8F0;">
+                <div style="font-weight:700; font-size:11px; color:#0F172A; margin-bottom:8px;">&#128269; Mark Parts to Inspect</div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+                  <label style="display:flex; align-items:center; gap:5px; font-size:10px; cursor:pointer;"><input type="checkbox" checked> Front Bumper</label>
+                  <label style="display:flex; align-items:center; gap:5px; font-size:10px; cursor:pointer;"><input type="checkbox" checked> Back Bumper</label>
+                  <label style="display:flex; align-items:center; gap:5px; font-size:10px; cursor:pointer;"><input type="checkbox" checked> Front Left Door</label>
+                  <label style="display:flex; align-items:center; gap:5px; font-size:10px; cursor:pointer;"><input type="checkbox"> Back Right Door</label>
+                  <label style="display:flex; align-items:center; gap:5px; font-size:10px; cursor:pointer;"><input type="checkbox"> Back Door Left</label>
+                  <label style="display:flex; align-items:center; gap:5px; font-size:10px; cursor:pointer;"><input type="checkbox"> Back Door Right</label>
+                  <label style="display:flex; align-items:center; gap:5px; font-size:10px; cursor:pointer;"><input type="checkbox" checked> Fender Left</label>
+                  <label style="display:flex; align-items:center; gap:5px; font-size:10px; cursor:pointer;"><input type="checkbox"> Fender Right</label>
+                  <label style="display:flex; align-items:center; gap:5px; font-size:10px; cursor:pointer;"><input type="checkbox"> Quarter Panel L</label>
+                  <label style="display:flex; align-items:center; gap:5px; font-size:10px; cursor:pointer;"><input type="checkbox"> Quarter Panel R</label>
+                  <label style="display:flex; align-items:center; gap:5px; font-size:10px; cursor:pointer;"><input type="checkbox" checked> Headlight L/R</label>
+                  <label style="display:flex; align-items:center; gap:5px; font-size:10px; cursor:pointer;"><input type="checkbox" checked> Tail Light L/R</label>
+                  <label style="display:flex; align-items:center; gap:5px; font-size:10px; cursor:pointer;"><input type="checkbox"> Fog Light L/R</label>
+                  <label style="display:flex; align-items:center; gap:5px; font-size:10px; cursor:pointer;"><input type="checkbox"> Indicators F/B</label>
+                  <label style="display:flex; align-items:center; gap:5px; font-size:10px; cursor:pointer;"><input type="checkbox"> OVRM Left/Right</label>
                 </div>
               </div>
-
-              <!-- Status Card -->
-              <div class="ins-card"
-                style="background:#fff; border-radius:12px; padding:12px; box-shadow:0 2px 4px rgba(0,0,0,0.05); margin-bottom:16px; border:1px solid #E2E8F0;">
-                <div
-                  style="display:flex; justify-content:space-between; border-bottom:1px solid #E2E8F0; padding-bottom:12px; margin-bottom:12px; text-align:center;">
-                  <div style="flex:1; border-right:1px solid #E2E8F0;">
-                    <div style="font-size:10px; color:#64748B; margin-bottom:4px;">Inspection Status</div>
-                    <div class="view-el"
-                      style="display:inline-block; background:#DCFCE7; color:#166534; padding:4px 8px; border-radius:12px; font-size:11px; font-weight:700;">
-                      ✓ PASSED</div>
-                    <select class="edit-el"
-                      style="font-size:11px; padding:2px; border-radius:4px; border:1px solid #CBD5E1; color:#166534; font-weight:700; background:#DCFCE7; margin:0 auto;">
-                      <option>PASSED</option>
-                      <option>FAILED</option>
-                    </select>
-                    <div style="font-size:8px; color:#64748B; margin-top:4px;">Vehicle is in good condition</div>
-                  </div>
-                  <div style="flex:1; border-right:1px solid #E2E8F0;">
-                    <div style="font-size:10px; color:#64748B; margin-bottom:4px;">Overall Rating</div>
-                    <div class="view-el" style="font-size:16px; font-weight:800; color:#0F172A;">4.6<span
-                        style="font-size:10px; color:#64748B;">/5</span></div>
-                    <input type="number" class="edit-el" value="4.6"
-                      style="width:40px; font-size:14px; font-weight:700; border:1px solid #CBD5E1; border-radius:4px; text-align:center; margin:0 auto;"
-                      max="5" min="1" step="0.1">
-                    <div style="color:#EAB308; font-size:10px;">★★★★☆</div>
-                  </div>
-                  <div style="flex:1;">
-                    <div style="font-size:10px; color:#64748B; margin-bottom:4px;">Inspection Date</div>
-                    <div style="font-size:14px; margin-bottom:2px;">📅</div>
-                    <div class="view-el" style="font-size:11px; font-weight:700; color:#0F172A;">24 Jul 2026</div>
-                    <input type="date" class="edit-el" value="2026-07-24"
-                      style="font-size:9px; padding:2px; width:75px; margin:0 auto;">
-                  </div>
-                </div>
-                <div style="display:flex; justify-content:space-between; font-size:10px;">
-                  <div style="display:flex; align-items:center; gap:4px;"><span style="color:#94A3B8;">👤</span> Care
-                    Sahani Inspection</div>
-                  <div style="display:flex; align-items:center; gap:4px;"><span style="color:#94A3B8;">📍</span> Delhi,
-                    India</div>
-                </div>
-              </div>
-
-              <div style="font-weight:700; font-size:14px; color:#0F172A; margin-bottom:12px;">Inspection Report</div>
-              <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:16px;">
-
-                <!-- Report Items -->
-                <div class="ins-item"
-                  style="background:#fff; border:1px solid #E2E8F0; border-radius:8px; padding:8px 10px; display:flex; align-items:center; justify-content:space-between;">
-                  <div style="display:flex; flex-direction:column; gap:2px;">
-                    <div
-                      style="font-size:11px; font-weight:600; color:#0F172A; display:flex; align-items:center; gap:4px;">
-                      <span style="color:#166534;">⚙️</span> Engine</div>
-                    <div class="view-el" style="font-size:10px; color:#166534; font-weight:600;">Good</div>
-                    <select class="edit-el" style="font-size:9px; padding:1px;">
-                      <option>Good</option>
-                      <option>Average</option>
-                      <option>Poor</option>
-                    </select>
-                  </div>
-                  <div style="color:#94A3B8; font-size:12px;">></div>
-                </div>
-
-                <div class="ins-item"
-                  style="background:#fff; border:1px solid #E2E8F0; border-radius:8px; padding:8px 10px; display:flex; align-items:center; justify-content:space-between;">
-                  <div style="display:flex; flex-direction:column; gap:2px;">
-                    <div
-                      style="font-size:11px; font-weight:600; color:#0F172A; display:flex; align-items:center; gap:4px;">
-                      <span style="color:#166534;">🔄</span> Transmission</div>
-                    <div class="view-el" style="font-size:10px; color:#166534; font-weight:600;">Good</div>
-                    <select class="edit-el" style="font-size:9px; padding:1px;">
-                      <option>Good</option>
-                      <option>Average</option>
-                      <option>Poor</option>
-                    </select>
-                  </div>
-                  <div style="color:#94A3B8; font-size:12px;">></div>
-                </div>
-
-                <div class="ins-item"
-                  style="background:#fff; border:1px solid #E2E8F0; border-radius:8px; padding:8px 10px; display:flex; align-items:center; justify-content:space-between;">
-                  <div style="display:flex; flex-direction:column; gap:2px;">
-                    <div
-                      style="font-size:11px; font-weight:600; color:#0F172A; display:flex; align-items:center; gap:4px;">
-                      <span style="color:#EA580C;">⚠️</span> Tyres</div>
-                    <div class="view-el" style="font-size:10px; color:#EA580C; font-weight:600;">70% Life</div>
-                    <input type="text" class="edit-el" value="70% Life" style="font-size:9px; width:50px;">
-                  </div>
-                  <div style="color:#94A3B8; font-size:12px;">></div>
-                </div>
-
-                <div class="ins-item"
-                  style="background:#fff; border:1px solid #E2E8F0; border-radius:8px; padding:8px 10px; display:flex; align-items:center; justify-content:space-between;">
-                  <div style="display:flex; flex-direction:column; gap:2px;">
-                    <div
-                      style="font-size:11px; font-weight:600; color:#0F172A; display:flex; align-items:center; gap:4px;">
-                      <span style="color:#166534;">🛑</span> Brakes</div>
-                    <div class="view-el" style="font-size:10px; color:#166534; font-weight:600;">Good</div>
-                    <select class="edit-el" style="font-size:9px; padding:1px;">
-                      <option>Good</option>
-                      <option>Average</option>
-                    </select>
-                  </div>
-                  <div style="color:#94A3B8; font-size:12px;">></div>
-                </div>
-
-                <div class="ins-item"
-                  style="background:#fff; border:1px solid #E2E8F0; border-radius:8px; padding:8px 10px; display:flex; align-items:center; justify-content:space-between;">
-                  <div style="display:flex; flex-direction:column; gap:2px;">
-                    <div
-                      style="font-size:11px; font-weight:600; color:#0F172A; display:flex; align-items:center; gap:4px;">
-                      <span style="color:#166534;">🚙</span> Suspension</div>
-                    <div class="view-el" style="font-size:10px; color:#166534; font-weight:600;">Good</div>
-                    <select class="edit-el" style="font-size:9px; padding:1px;">
-                      <option>Good</option>
-                      <option>Average</option>
-                    </select>
-                  </div>
-                  <div style="color:#94A3B8; font-size:12px;">></div>
-                </div>
-
-                <div class="ins-item"
-                  style="background:#fff; border:1px solid #E2E8F0; border-radius:8px; padding:8px 10px; display:flex; align-items:center; justify-content:space-between;">
-                  <div style="display:flex; flex-direction:column; gap:2px;">
-                    <div
-                      style="font-size:11px; font-weight:600; color:#0F172A; display:flex; align-items:center; gap:4px;">
-                      <span style="color:#EA580C;">⚠️</span> Body & Paint</div>
-                    <div class="view-el" style="font-size:10px; color:#EA580C; font-weight:600;">Minor Scratch</div>
-                    <input type="text" class="edit-el" value="Minor Scratch" style="font-size:9px; width:50px;">
-                  </div>
-                  <div style="color:#94A3B8; font-size:12px;">></div>
-                </div>
-
-                <div class="ins-item"
-                  style="background:#fff; border:1px solid #E2E8F0; border-radius:8px; padding:8px 10px; display:flex; align-items:center; justify-content:space-between;">
-                  <div style="display:flex; flex-direction:column; gap:2px;">
-                    <div
-                      style="font-size:11px; font-weight:600; color:#0F172A; display:flex; align-items:center; gap:4px;">
-                      <span style="color:#166534;">⚡</span> Electrical</div>
-                    <div class="view-el" style="font-size:10px; color:#166534; font-weight:600;">Good</div>
-                    <select class="edit-el" style="font-size:9px; padding:1px;">
-                      <option>Good</option>
-                      <option>Average</option>
-                    </select>
-                  </div>
-                  <div style="color:#94A3B8; font-size:12px;">></div>
-                </div>
-
-                <div class="ins-item"
-                  style="background:#fff; border:1px solid #E2E8F0; border-radius:8px; padding:8px 10px; display:flex; align-items:center; justify-content:space-between;">
-                  <div style="display:flex; flex-direction:column; gap:2px;">
-                    <div
-                      style="font-size:11px; font-weight:600; color:#0F172A; display:flex; align-items:center; gap:4px;">
-                      <span style="color:#166534;">💺</span> Interior</div>
-                    <div class="view-el" style="font-size:10px; color:#166534; font-weight:600;">Good</div>
-                    <select class="edit-el" style="font-size:9px; padding:1px;">
-                      <option>Good</option>
-                      <option>Average</option>
-                    </select>
-                  </div>
-                  <div style="color:#94A3B8; font-size:12px;">></div>
-                </div>
-
-              </div>
-
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                <div style="font-weight:700; font-size:14px; color:#0F172A;">Inspection Photos</div>
-                <div style="font-size:11px; color:#991B1B; font-weight:600; text-decoration:underline; cursor:pointer;">
-                  View All (12)</div>
-              </div>
-              <div style="display:flex; gap:8px; margin-bottom:16px;">
-                <div style="width:33%; aspect-ratio:1; background:#E2E8F0; border-radius:8px; overflow:hidden;"><img
-                    src="bg.png" style="width:100%; height:100%; object-fit:cover;"></div>
-                <div style="width:33%; aspect-ratio:1; background:#E2E8F0; border-radius:8px; overflow:hidden;"><img
-                    src="bg.png" style="width:100%; height:100%; object-fit:cover;"></div>
-                <div
-                  style="width:33%; aspect-ratio:1; background:#E2E8F0; border-radius:8px; overflow:hidden; position:relative;">
-                  <img src="bg.png" style="width:100%; height:100%; object-fit:cover;">
-                  <div class="edit-el"
-                    style="position:absolute; top:0;left:0;right:0;bottom:0; background:rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; color:#fff; font-size:24px; cursor:pointer;">
-                    +</div>
-                </div>
-              </div>
-
-              <div style="font-weight:700; font-size:14px; color:#0F172A; margin-bottom:8px;">Inspection Remarks</div>
-              <div
-                style="background:#FEF2F2; border:1px solid #FECACA; border-radius:8px; padding:12px; margin-bottom:16px; position:relative;">
-                <span
-                  style="position:absolute; top:8px; left:8px; color:#991B1B; font-size:16px; font-weight:800;">"</span>
-                <div class="view-el"
-                  style="font-size:11px; color:#450A0A; line-height:1.5; padding:0 12px; text-align:justify;">Vehicle is
-                  in good condition. Minor scratches on front bumper and left door. Engine and transmission are in
-                  excellent condition.</div>
-                <textarea class="edit-el"
-                  style="width:100%; font-size:11px; padding:8px; border:1px solid #FCA5A5; border-radius:4px; background:#fff; margin-top:8px;"
-                  rows="3">Vehicle is in good condition. Minor scratches on front bumper and left door. Engine and transmission are in excellent condition.</textarea>
-                <span
-                  style="position:absolute; bottom:2px; right:8px; color:#991B1B; font-size:16px; font-weight:800;">"</span>
-              </div>
-
-              <button class="view-el"
-                style="width:100%; padding:12px; border:1px solid #991B1B; background:#fff; color:#991B1B; border-radius:8px; font-weight:700; font-size:12px; display:flex; align-items:center; justify-content:center; gap:8px;">
-                📥 Download Inspection Report
-              </button>
-              <button class="edit-el"
-                style="width:100%; padding:12px; border:none; background:#991B1B; color:#fff; border-radius:8px; font-weight:700; font-size:12px; display:flex; align-items:center; justify-content:center; gap:8px; cursor:pointer;">
-                💾 Save Inspection Report
-              </button>
-
-              <div
-                style="text-align:center; font-size:10px; color:#64748B; margin-top:12px; display:flex; align-items:center; justify-content:center; gap:4px;">
-                🛡️ This inspection is verified and trusted
-              </div>
+              <button style="width:100%; padding:11px; border:none; background:linear-gradient(135deg,#1E3A5F,#2563EB); color:#fff; border-radius:8px; font-weight:700; font-size:12px; cursor:pointer;">&#128228; Send Request to Admin</button>
             </div>
           </div>
-          <p class="phone-label">1. Car Inspection Summary</p>
+          <p class="phone-label">1. Dealer &mdash; Request Inspection</p>
         </div>
 
-        <!-- Screen 2: Detailed Report -->
+        <!-- Screen 2: Admin Review -->
         <div>
           <div class="phone" style="background:#F8FAFC;">
             <div class="screen-badge">#2</div>
-            <div class="status-bar" style="color:#0F172A;"><span>9:41</span>
-              <div class="status-icons">📶 🔋 100%</div>
+            <div class="status-bar" style="color:#0F172A;"><span>9:41</span><div class="status-icons">&#128246; &#128267; 100%</div></div>
+            <div class="page-header" style="background:#7C3AED; color:#fff;">
+              <div class="back-btn" style="color:#fff;">&#8592;</div><span class="header-title" style="color:#fff;">Inspection Requests</span><span class="header-right">&#128081;</span>
             </div>
-
-            <div class="page-header" style="background:#fff; border-bottom:1px solid #E2E8F0; color:#0F172A;">
-              <div class="back-btn" style="color:#0F172A;">←</div><span class="header-title">Inspection
-                Report</span><span class="header-right" style="color:#991B1B;">📥</span>
-            </div>
-
-            <div class="screen-body"
-              style="background:#F8FAFC; padding:12px; color:#334155; overflow-y:auto; height: 100%;">
-              <!-- Same Car Summary Card -->
-              <div class="ins-card"
-                style="background:#fff; border-radius:12px; padding:12px; display:flex; gap:12px; box-shadow:0 2px 4px rgba(0,0,0,0.05); margin-bottom:16px; border:1px solid #E2E8F0;">
-                <div style="width:100px; height:70px; background:#E2E8F0; border-radius:8px; overflow:hidden;"><img
-                    src="bg.png" style="width:100%; height:100%; object-fit:cover;"></div>
-                <div style="flex:1;">
-                  <div style="font-weight:700; font-size:14px; color:#0F172A;">Toyota Fortuner</div>
-                  <div style="font-size:11px; color:#64748B; margin-bottom:4px;">2.8 4x2 AT</div>
-                  <div style="display:flex; gap:4px; margin-bottom:4px;">
-                    <span style="background:#F1F5F9; padding:2px 6px; border-radius:4px; font-size:9px;">2021</span>
-                    <span style="background:#F1F5F9; padding:2px 6px; border-radius:4px; font-size:9px;">Diesel</span>
-                  </div>
-                  <div style="font-size:9px; color:#64748B;">VIN: MB1KA3FS0M...</div>
+            <div class="screen-body" style="background:#F5F3FF; padding:10px; overflow-y:auto; height:100%; color:#0F172A;">
+              <div style="background:linear-gradient(135deg,#7C3AED,#A855F7); border-radius:10px; padding:10px; margin-bottom:10px; color:#fff; display:flex; align-items:center; gap:8px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; font-size:18px;">&#128081;</div>
+                <div><div style="font-weight:700; font-size:12px;">Super Admin Panel</div><div style="font-size:9px; opacity:0.8;">Sahani Cars 24 &bull; Inspection Management</div></div>
+                <div style="margin-left:auto; background:rgba(255,255,255,0.2); padding:3px 8px; border-radius:12px; font-size:9px; font-weight:700;">3 Pending</div>
+              </div>
+              <div style="background:#fff; border-radius:10px; margin-bottom:10px; border:1px solid #E2E8F0; overflow:hidden;">
+                <div style="background:#FEF3C7; padding:8px 10px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #FDE68A;"><div style="font-size:10px; font-weight:700; color:#B45309;">&#9889; URGENT REQUEST</div><div style="font-size:9px; color:#92400E;">Aug 07, 2026 &bull; 9:20 AM</div></div>
+                <div style="padding:10px;">
+                  <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;"><div><div style="font-weight:700; font-size:12px; color:#0F172A;">Toyota Fortuner 2021</div><div style="font-size:10px; color:#64748B;">DL 8C AB 1234 &bull; Diesel &bull; 32k KM</div></div><div style="background:#FEF3C7; color:#B45309; padding:2px 7px; border-radius:5px; font-size:9px; font-weight:700; flex-shrink:0;">&#9889; URGENT</div></div>
+                  <div style="font-size:10px; color:#475569; margin-bottom:8px; padding:6px; background:#F8FAFC; border-radius:6px; border-left:3px solid #7C3AED;"><b>Dealer:</b> Sharma Motors (DLR-00182)<br><b>Request:</b> Full Inspection (140 Points)<br><b>Preferred:</b> Aug 10, 2026<br><b>Note:</b> Check front bumper &amp; left side doors.</div>
+                  <div style="font-size:10px; font-weight:600; color:#0F172A; margin-bottom:5px;">Requested Parts:</div>
+                  <div style="display:flex; flex-wrap:wrap; gap:4px; margin-bottom:10px;"><span style="background:#EFF6FF; color:#2563EB; padding:2px 6px; border-radius:4px; font-size:8px; font-weight:600;">Front Bumper</span><span style="background:#EFF6FF; color:#2563EB; padding:2px 6px; border-radius:4px; font-size:8px; font-weight:600;">Front Left Door</span><span style="background:#EFF6FF; color:#2563EB; padding:2px 6px; border-radius:4px; font-size:8px; font-weight:600;">Fender Left</span><span style="background:#EFF6FF; color:#2563EB; padding:2px 6px; border-radius:4px; font-size:8px; font-weight:600;">Headlights</span><span style="background:#EFF6FF; color:#2563EB; padding:2px 6px; border-radius:4px; font-size:8px; font-weight:600;">Tail Lights</span><span style="background:#F0FDF4; color:#166534; padding:2px 6px; border-radius:4px; font-size:8px; font-weight:600;">+3 more</span></div>
+                  <div style="margin-bottom:8px;"><label style="font-size:9px; color:#64748B; font-weight:600; text-transform:uppercase;">Assign Inspector</label><select style="width:100%; margin-top:3px; padding:6px 8px; border-radius:6px; border:1px solid #CBD5E1; font-size:10px; color:#0F172A; background:#fff;"><option>Rahul Verma &mdash; Senior Inspector</option><option>Amit Singh &mdash; Inspector</option><option>Priya Sharma &mdash; Inspector</option></select></div>
+                  <div style="margin-bottom:10px;"><label style="font-size:9px; color:#64748B; font-weight:600; text-transform:uppercase;">Confirm Date</label><input type="date" value="2026-08-10" style="width:100%; margin-top:3px; padding:6px 8px; border-radius:6px; border:1px solid #CBD5E1; font-size:10px;"></div>
+                  <div style="display:flex; gap:8px;"><button style="flex:1; padding:9px; border:1px solid #DC2626; background:#fff; color:#DC2626; border-radius:7px; font-weight:700; font-size:10px; cursor:pointer;">&#10007; Decline</button><button style="flex:2; padding:9px; border:none; background:linear-gradient(135deg,#7C3AED,#A855F7); color:#fff; border-radius:7px; font-weight:700; font-size:10px; cursor:pointer;">&#10003; Approve &amp; Assign</button></div>
                 </div>
               </div>
-
-              <div style="font-weight:700; font-size:14px; color:#0F172A; margin-bottom:8px;">Inspection Overview</div>
-
-              <div class="ins-card"
-                style="background:#fff; border-radius:12px; padding:0; box-shadow:0 2px 4px rgba(0,0,0,0.05); margin-bottom:16px; border:1px solid #E2E8F0; overflow:hidden;">
-                <div style="display:flex; border-bottom:1px solid #E2E8F0; background:#F0FDF4; padding:12px;">
-                  <div style="flex:1; border-right:1px solid #DCFCE7;">
-                    <div
-                      style="font-size:14px; color:#166534; font-weight:800; display:flex; align-items:center; gap:6px;">
-                      <div class="view-el"
-                        style="width:20px; height:20px; border-radius:50%; background:#166534; color:#fff; display:flex; align-items:center; justify-content:center; font-size:12px;">
-                        ✓</div>
-                      <span class="view-el">PASSED</span>
-                      <select class="edit-el"
-                        style="font-size:12px; font-weight:bold; color:#166534; border:1px solid #166534;">
-                        <option>PASSED</option>
-                        <option>FAILED</option>
-                      </select>
-                    </div>
-                    <div style="font-size:9px; color:#166534; margin-top:4px;">Vehicle is in good condition</div>
-                  </div>
-                  <div style="flex:0.8; text-align:center;">
-                    <div style="font-size:10px; color:#64748B;">Overall Rating</div>
-                    <div class="view-el" style="font-size:16px; font-weight:800; color:#0F172A;">4.6<span
-                        style="font-size:10px; color:#64748B;">/5</span></div>
-                    <input type="number" class="edit-el" value="4.6"
-                      style="width:40px; font-size:14px; font-weight:700; border:1px solid #CBD5E1; border-radius:4px; text-align:center; margin:0 auto;"
-                      max="5" min="1" step="0.1">
-                    <div style="color:#EAB308; font-size:10px;">★★★★☆</div>
-                  </div>
-                </div>
-
-                <div style="padding:12px; font-size:11px; display:flex; flex-direction:column; gap:8px;">
-                  <div style="display:flex; justify-content:space-between;">
-                    <div style="color:#64748B; display:flex; align-items:center; gap:6px;">📅 Inspection Date</div>
-                    <div class="view-el" style="font-weight:600; color:#0F172A;">24 Jul 2026</div>
-                    <input type="date" class="edit-el" value="2026-07-24" style="font-size:10px;">
-                  </div>
-                  <div style="display:flex; justify-content:space-between;">
-                    <div style="color:#64748B; display:flex; align-items:center; gap:6px;">🕒 Inspection Time</div>
-                    <div class="view-el" style="font-weight:600; color:#0F172A;">11:30 AM</div>
-                    <input type="time" class="edit-el" value="11:30" style="font-size:10px;">
-                  </div>
-                  <div style="display:flex; justify-content:space-between;">
-                    <div style="color:#64748B; display:flex; align-items:center; gap:6px;">👤 Inspected By</div>
-                    <div class="view-el" style="font-weight:600; color:#0F172A;">Care Sahani Inspection Team</div>
-                    <input type="text" class="edit-el" value="Care Sahani Team" style="font-size:10px;">
-                  </div>
-                  <div style="display:flex; justify-content:space-between;">
-                    <div style="color:#64748B; display:flex; align-items:center; gap:6px;">📍 Location</div>
-                    <div class="view-el" style="font-weight:600; color:#0F172A;">Delhi, India</div>
-                    <input type="text" class="edit-el" value="Delhi, India" style="font-size:10px;">
-                  </div>
-                </div>
+              <div style="background:#fff; border-radius:10px; border:1px solid #E2E8F0; padding:10px; display:flex; gap:8px; align-items:center;">
+                <div style="width:36px; height:36px; border-radius:8px; background:#F1F5F9; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0;">&#128665;</div>
+                <div style="flex:1;"><div style="font-size:11px; font-weight:700; color:#0F172A;">Hyundai Creta 2022</div><div style="font-size:9px; color:#64748B;">Kapoor Auto &bull; Normal &bull; Aug 12</div></div>
+                <div style="background:#FEF9C3; color:#A16207; padding:3px 7px; border-radius:5px; font-size:8px; font-weight:700; flex-shrink:0;">&#128336; Pending</div>
               </div>
-
-              <div style="font-weight:700; font-size:14px; color:#0F172A; margin-bottom:8px;">Detailed Report</div>
-              <div style="background:#fff; border-radius:12px; border:1px solid #E2E8F0; margin-bottom:16px;">
-                <!-- List Items -->
-                <div
-                  style="padding:12px; border-bottom:1px solid #E2E8F0; display:flex; justify-content:space-between; align-items:center; font-size:11px;">
-                  <div style="display:flex; align-items:center; gap:8px; font-weight:600; color:#0F172A;"><span
-                      style="color:#166534;">⚙️</span> Engine</div>
-                  <div style="display:flex; align-items:center; gap:8px;">
-                    <div class="view-el" style="color:#166534; font-weight:600;">Good</div>
-                    <select class="edit-el" style="font-size:10px; padding:2px;">
-                      <option>Good</option>
-                      <option>Average</option>
-                    </select>
-                    <span style="color:#94A3B8;">∨</span>
-                  </div>
-                </div>
-                <div
-                  style="padding:12px; border-bottom:1px solid #E2E8F0; display:flex; justify-content:space-between; align-items:center; font-size:11px;">
-                  <div style="display:flex; align-items:center; gap:8px; font-weight:600; color:#0F172A;"><span
-                      style="color:#166534;">🔄</span> Transmission</div>
-                  <div style="display:flex; align-items:center; gap:8px;">
-                    <div class="view-el" style="color:#166534; font-weight:600;">Good</div>
-                    <select class="edit-el" style="font-size:10px; padding:2px;">
-                      <option>Good</option>
-                      <option>Average</option>
-                    </select>
-                    <span style="color:#94A3B8;">∨</span>
-                  </div>
-                </div>
-                <div
-                  style="padding:12px; border-bottom:1px solid #E2E8F0; display:flex; justify-content:space-between; align-items:center; font-size:11px;">
-                  <div style="display:flex; align-items:center; gap:8px; font-weight:600; color:#0F172A;"><span
-                      style="color:#EA580C;">⚠️</span> Tyres</div>
-                  <div style="display:flex; align-items:center; gap:8px;">
-                    <div class="view-el" style="color:#EA580C; font-weight:600;">70% Life</div>
-                    <input type="text" class="edit-el" value="70% Life" style="font-size:10px; width:60px;">
-                    <span style="color:#94A3B8;">∨</span>
-                  </div>
-                </div>
-
-                <div style="padding:12px; font-size:11px; display:flex; flex-direction:column; gap:10px;">
-                  <div style="display:flex; justify-content:space-between; align-items:center;">
-                    <div style="color:#64748B; display:flex; align-items:center; gap:6px;">⏱️ Odometer Reading</div>
-                    <div class="view-el" style="font-weight:700; color:#991B1B;">32,450 KM</div>
-                    <input type="text" class="edit-el" value="32,450 KM" style="font-size:10px; width:70px;">
-                  </div>
-                  <div style="display:flex; justify-content:space-between; align-items:center;">
-                    <div style="color:#64748B; display:flex; align-items:center; gap:6px;">⛽ Fuel Type</div>
-                    <div class="view-el" style="font-weight:700; color:#0F172A;">Diesel</div>
-                    <select class="edit-el" style="font-size:10px; padding:2px;">
-                      <option>Diesel</option>
-                      <option>Petrol</option>
-                    </select>
-                  </div>
-                  <div style="display:flex; justify-content:space-between; align-items:center;">
-                    <div style="color:#64748B; display:flex; align-items:center; gap:6px;">⚙️ Transmission Type</div>
-                    <div class="view-el" style="font-weight:700; color:#0F172A;">Automatic</div>
-                    <select class="edit-el" style="font-size:10px; padding:2px;">
-                      <option>Automatic</option>
-                      <option>Manual</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <div style="font-weight:700; font-size:14px; color:#0F172A; margin-bottom:8px;">Inspector Remarks</div>
-              <div
-                style="background:#FEF2F2; border:1px solid #FECACA; border-radius:8px; padding:12px; margin-bottom:16px; position:relative;">
-                <span
-                  style="position:absolute; top:8px; left:8px; color:#991B1B; font-size:16px; font-weight:800;">"</span>
-                <div class="view-el"
-                  style="font-size:11px; color:#450A0A; line-height:1.5; padding:0 12px; text-align:justify;">Vehicle is
-                  in good condition. Minor scratches on front bumper and left door. Engine and transmission are in
-                  excellent condition.</div>
-                <textarea class="edit-el"
-                  style="width:100%; font-size:11px; padding:8px; border:1px solid #FCA5A5; border-radius:4px; background:#fff; margin-top:8px;"
-                  rows="3">Vehicle is in good condition. Minor scratches on front bumper and left door. Engine and transmission are in excellent condition.</textarea>
-                <span
-                  style="position:absolute; bottom:2px; right:8px; color:#991B1B; font-size:16px; font-weight:800;">"</span>
-              </div>
-
             </div>
           </div>
-          <p class="phone-label">2. Detailed Inspection Report</p>
+          <p class="phone-label">2. Admin &mdash; Review &amp; Assign</p>
         </div>
 
-        <!-- Screen 3: Perform Car Inspection -->
+        <!-- Screen 3: Full Inspection All Parts Editable -->
         <div>
           <div class="phone" style="background:#F8FAFC;">
             <div class="screen-badge">#3</div>
-            <div class="status-bar" style="color:#0F172A;"><span>9:45</span>
-              <div class="status-icons">📶 🔋 98%</div>
-            </div>
-
+            <div class="status-bar" style="color:#0F172A;"><span>9:41</span><div class="status-icons">&#128246; &#128267; 100%</div></div>
             <div class="page-header" style="background:#fff; border-bottom:1px solid #E2E8F0; color:#0F172A;">
-              <div class="back-btn" style="color:#0F172A;">←</div><span class="header-title">CAR INSPECTION</span>
+              <div class="back-btn" style="color:#0F172A;">&#8592;</div><span class="header-title">Car Inspection</span><span class="header-right" style="color:#991B1B;">&#128737;</span>
             </div>
-
-            <div class="screen-body"
-              style="background:#F8FAFC; padding:12px; color:#334155; overflow-y:auto; height: 100%;">
-
-              <div class="ins-card"
-                style="background:#fff; border-radius:12px; padding:12px; border:1px solid #E2E8F0; margin-bottom:12px;">
-                <div style="font-weight:700; font-size:12px; color:#0F172A; margin-bottom:8px;">1. Vehicle Details</div>
-                <div class="form-group" style="margin-bottom:8px;"><label class="form-label"
-                    style="font-size:9px;">Registration Number</label>
-                  <div class="form-input filled" style="font-size:11px;">DL 8C AB 1234</div>
-                </div>
-                <div class="form-group" style="margin-bottom:8px;"><label class="form-label" style="font-size:9px;">VIN
-                    Number</label>
-                  <div class="form-input filled" style="font-size:11px;">MB1KA3FS0M1234567</div>
-                </div>
-                <div class="form-group" style="margin-bottom:8px;"><label class="form-label"
-                    style="font-size:9px;">Odometer Reading</label>
-                  <div class="form-input filled" style="font-size:11px;">32,450 KM</div>
-                </div>
+            <div class="screen-body" style="background:#F8FAFC; padding:10px; color:#334155; overflow-y:auto; height:100%;">
+              <div style="background:#fff; border-radius:10px; padding:10px; display:flex; gap:10px; box-shadow:0 2px 4px rgba(0,0,0,0.05); margin-bottom:10px; border:1px solid #E2E8F0;">
+                <div style="width:80px; height:55px; background:#E2E8F0; border-radius:7px; overflow:hidden; flex-shrink:0;"><img src="bg.png" style="width:100%;height:100%;object-fit:cover;"></div>
+                <div style="flex:1;"><div style="font-weight:700; font-size:13px; color:#0F172A;">Toyota Fortuner</div><div style="font-size:10px; color:#64748B;">2021 &bull; Diesel &bull; 32,450 KM</div><div style="display:flex; gap:4px; margin-top:3px;"><span style="background:#DCFCE7; color:#166534; padding:1px 5px; border-radius:4px; font-size:8px; font-weight:700;">&#10003; PASSED</span><span style="background:#F1F5F9; color:#475569; padding:1px 5px; border-radius:4px; font-size:8px;">4.6/5 &#9733;</span></div></div>
               </div>
-
-              <div class="ins-card"
-                style="background:#fff; border-radius:12px; padding:12px; border:1px solid #E2E8F0; margin-bottom:12px;">
-                <div style="font-weight:700; font-size:12px; color:#0F172A; margin-bottom:8px;">2. Upload Photos</div>
-                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;">
-                  <div
-                    style="aspect-ratio:1; background:#F1F5F9; border:1px dashed #CBD5E1; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:20px; color:#94A3B8; cursor:pointer;">
-                    +</div>
-                  <div
-                    style="aspect-ratio:1; background:#E2E8F0; border-radius:8px; display:flex; align-items:center; justify-content:center;">
-                    📸</div>
-                  <div
-                    style="aspect-ratio:1; background:#E2E8F0; border-radius:8px; display:flex; align-items:center; justify-content:center;">
-                    📸</div>
-                </div>
+              <div style="font-weight:700; font-size:12px; color:#0F172A; margin-bottom:7px; padding:6px 8px; border-left:3px solid #1E3A5F; border-radius:0 6px 6px 0; background:rgba(30,58,95,0.06);">&#128663; Exterior Body Parts</div>
+              <div style="background:#fff; border-radius:10px; border:1px solid #E2E8F0; margin-bottom:10px; overflow:hidden;">
+                <div style="padding:8px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#128737; Front Bumper</div><div class="view-el" style="font-size:9px; color:#EA580C;">Minor Scratch</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option>Good</option><option selected>Minor Scratch</option><option>Dent</option><option>Broken</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #FED7AA; background:#FFF7ED; display:flex; align-items:center; justify-content:center; font-size:11px;">&#9888;</div></div>
+                <div style="padding:8px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#128737; Back Bumper</div><div class="view-el" style="font-size:9px; color:#166534;">Good</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option selected>Good</option><option>Minor Scratch</option><option>Dent</option><option>Broken</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #BBF7D0; background:#F0FDF4; display:flex; align-items:center; justify-content:center; font-size:11px;">&#10003;</div></div>
+                <div style="padding:8px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#128682; Front Left Door</div><div class="view-el" style="font-size:9px; color:#EA580C;">Minor Dent</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option>Good</option><option>Minor Scratch</option><option selected>Minor Dent</option><option>Major Dent</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #FED7AA; background:#FFF7ED; display:flex; align-items:center; justify-content:center; font-size:11px;">&#9888;</div></div>
+                <div style="padding:8px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#128682; Back Right Door</div><div class="view-el" style="font-size:9px; color:#166534;">Good</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option selected>Good</option><option>Minor Scratch</option><option>Minor Dent</option><option>Major Dent</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #BBF7D0; background:#F0FDF4; display:flex; align-items:center; justify-content:center; font-size:11px;">&#10003;</div></div>
+                <div style="padding:8px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#128682; Back Door Left</div><div class="view-el" style="font-size:9px; color:#166534;">Good</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option selected>Good</option><option>Minor Scratch</option><option>Minor Dent</option><option>Major Dent</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #BBF7D0; background:#F0FDF4; display:flex; align-items:center; justify-content:center; font-size:11px;">&#10003;</div></div>
+                <div style="padding:8px 10px; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#128682; Back Door Right</div><div class="view-el" style="font-size:9px; color:#166534;">Good</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option selected>Good</option><option>Minor Scratch</option><option>Minor Dent</option><option>Major Dent</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #BBF7D0; background:#F0FDF4; display:flex; align-items:center; justify-content:center; font-size:11px;">&#10003;</div></div>
               </div>
-
-              <div class="ins-card"
-                style="background:#fff; border-radius:12px; padding:12px; border:1px solid #E2E8F0; margin-bottom:12px;">
-                <div style="font-weight:700; font-size:12px; color:#0F172A; margin-bottom:8px;">3. 140-Point Checklist
-                </div>
-
-                <div
-                  style="display:flex; justify-content:space-between; align-items:center; padding:6px 0; border-bottom:1px solid #F1F5F9;">
-                  <span style="font-size:11px; font-weight:600;">Engine & Transmission</span>
-                  <select style="font-size:10px; padding:2px; border-radius:4px; border:1px solid #CBD5E1;">
-                    <option>Pass</option>
-                    <option>Fail</option>
-                  </select>
-                </div>
-                <div
-                  style="display:flex; justify-content:space-between; align-items:center; padding:6px 0; border-bottom:1px solid #F1F5F9;">
-                  <span style="font-size:11px; font-weight:600;">Steering & Suspension</span>
-                  <select style="font-size:10px; padding:2px; border-radius:4px; border:1px solid #CBD5E1;">
-                    <option>Pass</option>
-                    <option>Fail</option>
-                  </select>
-                </div>
-                <div
-                  style="display:flex; justify-content:space-between; align-items:center; padding:6px 0; border-bottom:1px solid #F1F5F9;">
-                  <span style="font-size:11px; font-weight:600;">Exterior & Body</span>
-                  <select style="font-size:10px; padding:2px; border-radius:4px; border:1px solid #CBD5E1;">
-                    <option>Minor Dents</option>
-                    <option>Pass</option>
-                    <option>Fail</option>
-                  </select>
-                </div>
-                <div style="display:flex; justify-content:space-between; align-items:center; padding:6px 0;">
-                  <span style="font-size:11px; font-weight:600;">Overall Rating (1-5)</span>
-                  <input type="number" value="4.5"
-                    style="width:40px; font-size:10px; padding:2px; border:1px solid #CBD5E1; border-radius:4px; text-align:center;">
-                </div>
+              <div style="font-weight:700; font-size:12px; color:#0F172A; margin-bottom:7px; padding:6px 8px; border-left:3px solid #7C3AED; border-radius:0 6px 6px 0; background:rgba(124,58,237,0.06);">&#128295; Fenders &amp; Quarter Panels</div>
+              <div style="background:#fff; border-radius:10px; border:1px solid #E2E8F0; margin-bottom:10px; overflow:hidden;">
+                <div style="padding:8px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#128297; Fender Left</div><div class="view-el" style="font-size:9px; color:#EA580C;">Minor Scratch</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option>Good</option><option selected>Minor Scratch</option><option>Dent</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #FED7AA; background:#FFF7ED; display:flex; align-items:center; justify-content:center; font-size:11px;">&#9888;</div></div>
+                <div style="padding:8px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#128297; Fender Right</div><div class="view-el" style="font-size:9px; color:#166534;">Good</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option selected>Good</option><option>Minor Scratch</option><option>Dent</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #BBF7D0; background:#F0FDF4; display:flex; align-items:center; justify-content:center; font-size:11px;">&#10003;</div></div>
+                <div style="padding:8px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#128208; Quarter Panel Left</div><div class="view-el" style="font-size:9px; color:#166534;">Good</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option selected>Good</option><option>Minor Scratch</option><option>Dent</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #BBF7D0; background:#F0FDF4; display:flex; align-items:center; justify-content:center; font-size:11px;">&#10003;</div></div>
+                <div style="padding:8px 10px; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#128208; Quarter Panel Right</div><div class="view-el" style="font-size:9px; color:#166534;">Good</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option selected>Good</option><option>Minor Scratch</option><option>Dent</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #BBF7D0; background:#F0FDF4; display:flex; align-items:center; justify-content:center; font-size:11px;">&#10003;</div></div>
               </div>
-
-              <button class="cta-btn primary full mt-auto" style="background:#166534; margin-top:8px;">✅ Submit
-                Inspection Report</button>
+              <div style="font-weight:700; font-size:12px; color:#0F172A; margin-bottom:7px; padding:6px 8px; border-left:3px solid #F59E0B; border-radius:0 6px 6px 0; background:rgba(245,158,11,0.06);">&#128161; Lights &amp; Signals</div>
+              <div style="background:#fff; border-radius:10px; border:1px solid #E2E8F0; margin-bottom:10px; overflow:hidden;">
+                <div style="padding:8px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#128161; Headlight Left (Front)</div><div class="view-el" style="font-size:9px; color:#166534;">Good</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option selected>Good</option><option>Cracked</option><option>Foggy</option><option>Not Working</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #BBF7D0; background:#F0FDF4; display:flex; align-items:center; justify-content:center; font-size:11px;">&#10003;</div></div>
+                <div style="padding:8px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#128161; Headlight Right (Front)</div><div class="view-el" style="font-size:9px; color:#166534;">Good</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option selected>Good</option><option>Cracked</option><option>Foggy</option><option>Not Working</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #BBF7D0; background:#F0FDF4; display:flex; align-items:center; justify-content:center; font-size:11px;">&#10003;</div></div>
+                <div style="padding:8px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#128308; Tail Light Left</div><div class="view-el" style="font-size:9px; color:#166534;">Good</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option selected>Good</option><option>Cracked</option><option>Not Working</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #BBF7D0; background:#F0FDF4; display:flex; align-items:center; justify-content:center; font-size:11px;">&#10003;</div></div>
+                <div style="padding:8px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#128308; Tail Light Right</div><div class="view-el" style="font-size:9px; color:#EA580C;">Cracked</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option>Good</option><option selected>Cracked</option><option>Not Working</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #FED7AA; background:#FFF7ED; display:flex; align-items:center; justify-content:center; font-size:11px;">&#9888;</div></div>
+                <div style="padding:8px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#127787; Fog Light Left</div><div class="view-el" style="font-size:9px; color:#166534;">Good</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option selected>Good</option><option>Cracked</option><option>Not Working</option><option>Missing</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #BBF7D0; background:#F0FDF4; display:flex; align-items:center; justify-content:center; font-size:11px;">&#10003;</div></div>
+                <div style="padding:8px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#127787; Fog Light Right</div><div class="view-el" style="font-size:9px; color:#166534;">Good</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option selected>Good</option><option>Cracked</option><option>Not Working</option><option>Missing</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #BBF7D0; background:#F0FDF4; display:flex; align-items:center; justify-content:center; font-size:11px;">&#10003;</div></div>
+                <div style="padding:8px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#128993; Indicator Front Left</div><div class="view-el" style="font-size:9px; color:#166534;">Good</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option selected>Good</option><option>Not Working</option><option>Missing</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #BBF7D0; background:#F0FDF4; display:flex; align-items:center; justify-content:center; font-size:11px;">&#10003;</div></div>
+                <div style="padding:8px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#128993; Indicator Front Right</div><div class="view-el" style="font-size:9px; color:#166534;">Good</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option selected>Good</option><option>Not Working</option><option>Missing</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #BBF7D0; background:#F0FDF4; display:flex; align-items:center; justify-content:center; font-size:11px;">&#10003;</div></div>
+                <div style="padding:8px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#128993; Indicator Back Left</div><div class="view-el" style="font-size:9px; color:#166534;">Good</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option selected>Good</option><option>Not Working</option><option>Missing</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #BBF7D0; background:#F0FDF4; display:flex; align-items:center; justify-content:center; font-size:11px;">&#10003;</div></div>
+                <div style="padding:8px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#128993; Indicator Back Right</div><div class="view-el" style="font-size:9px; color:#DC2626;">Not Working</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option>Good</option><option selected>Not Working</option><option>Missing</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #FECACA; background:#FEF2F2; display:flex; align-items:center; justify-content:center; font-size:11px;">&#10007;</div></div>
+                <div style="padding:8px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#129388; OVRM Left</div><div class="view-el" style="font-size:9px; color:#166534;">Good</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option selected>Good</option><option>Cracked Mirror</option><option>Broken</option><option>Missing</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #BBF7D0; background:#F0FDF4; display:flex; align-items:center; justify-content:center; font-size:11px;">&#10003;</div></div>
+                <div style="padding:8px 10px; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-size:10px; font-weight:700; color:#0F172A;">&#129388; OVRM Right</div><div class="view-el" style="font-size:9px; color:#166534;">Good</div><select class="edit-el" style="font-size:9px; padding:1px 3px; margin-top:2px; border-radius:4px; border:1px solid #CBD5E1;"><option selected>Good</option><option>Cracked Mirror</option><option>Broken</option><option>Missing</option><option>Replaced</option></select></div><div style="width:26px; height:26px; border-radius:50%; border:2px solid #BBF7D0; background:#F0FDF4; display:flex; align-items:center; justify-content:center; font-size:11px;">&#10003;</div></div>
+              </div>
+              <div style="font-weight:700; font-size:12px; color:#0F172A; margin-bottom:7px;">&#128221; Inspector Remarks</div>
+              <div style="background:#FEF2F2; border:1px solid #FECACA; border-radius:8px; padding:10px; margin-bottom:12px;">
+                <div class="view-el" style="font-size:10px; color:#450A0A; line-height:1.5; text-align:justify;">Front bumper has minor scratch on lower lip. Front left door has a small dent near the handle. Tail light right is cracked. Rear right indicator not working &mdash; needs replacement. All mechanical parts in excellent condition.</div>
+                <textarea class="edit-el" style="width:100%; font-size:10px; padding:6px; border:1px solid #FCA5A5; border-radius:4px; background:#fff; margin-top:6px; resize:none;" rows="3">Front bumper minor scratch. Front left door small dent. Tail light right cracked. Rear right indicator not working - replace.</textarea>
+              </div>
+              <button class="view-el" style="width:100%; padding:10px; border:1px solid #991B1B; background:#fff; color:#991B1B; border-radius:8px; font-weight:700; font-size:11px; margin-bottom:8px; cursor:pointer;">&#128229; Download Inspection Report</button>
+              <button class="edit-el" style="width:100%; padding:10px; border:none; background:#991B1B; color:#fff; border-radius:8px; font-weight:700; font-size:11px; cursor:pointer; margin-bottom:8px;">&#128190; Save &amp; Submit Report</button>
+              <div style="text-align:center; font-size:9px; color:#64748B; margin-top:4px;">&#128737; This inspection is verified and trusted by Sahani Cars 24</div>
             </div>
           </div>
-          <p class="phone-label">3. Perform CAR INSPECTION</p>
+          <p class="phone-label">3. Full Inspection Report (All Parts)</p>
+        </div>
+
+        <!-- Screen 4: Customer Read-Only View -->
+        <div>
+          <div class="phone" style="background:#F8FAFC;">
+            <div class="screen-badge">#4</div>
+            <div class="status-bar" style="color:#0F172A;"><span>9:41</span><div class="status-icons">&#128246; &#128267; 100%</div></div>
+            <div class="page-header" style="background:#0F172A; color:#fff;">
+              <div class="back-btn" style="color:#fff;">&#8592;</div><span class="header-title" style="color:#fff;">Inspection Report</span><span class="header-right" style="color:#EAB308;">&#128737;</span>
+            </div>
+            <div class="screen-body" style="background:#F8FAFC; padding:10px; overflow-y:auto; height:100%; color:#0F172A;">
+              <div style="background:linear-gradient(135deg,#166534,#15803D); border-radius:10px; padding:10px; margin-bottom:10px; color:#fff; display:flex; align-items:center; gap:10px;">
+                <div style="font-size:28px;">&#128737;</div>
+                <div><div style="font-weight:800; font-size:13px;">Verified Inspection</div><div style="font-size:9px; opacity:0.85;">By Sahani Cars 24 Certified Team &bull; 24 Jul 2026</div><div style="background:rgba(255,255,255,0.2); border-radius:10px; padding:2px 8px; display:inline-block; margin-top:4px; font-size:9px; font-weight:700;">140-Point Check &#10003; PASSED</div></div>
+              </div>
+              <div style="background:#fff; border-radius:10px; padding:10px; display:flex; gap:10px; box-shadow:0 2px 4px rgba(0,0,0,0.06); margin-bottom:10px; border:1px solid #E2E8F0;">
+                <div style="width:80px; height:55px; background:#E2E8F0; border-radius:7px; overflow:hidden; flex-shrink:0;"><img src="bg.png" style="width:100%;height:100%;object-fit:cover;"></div>
+                <div style="flex:1;"><div style="font-weight:700; font-size:13px; color:#0F172A;">Toyota Fortuner 2021</div><div style="font-size:10px; color:#64748B;">Diesel &bull; AT &bull; 32,450 KM</div><div style="display:flex; gap:4px; margin-top:3px; flex-wrap:wrap;"><span style="background:#DCFCE7; color:#166534; padding:1px 6px; border-radius:10px; font-size:8px; font-weight:700;">&#10003; PASSED</span><span style="background:#FEF3C7; color:#B45309; padding:1px 6px; border-radius:10px; font-size:8px; font-weight:700;">4.6/5 &#9733;</span><span style="background:#EFF6FF; color:#2563EB; padding:1px 6px; border-radius:10px; font-size:8px; font-weight:700;">4 Issues Found</span></div></div>
+              </div>
+              <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-bottom:10px;">
+                <div style="background:#F0FDF4; border:1px solid #BBF7D0; border-radius:8px; padding:6px; text-align:center;"><div style="font-size:16px; font-weight:800; color:#166534;">15</div><div style="font-size:8px; color:#166534; font-weight:600;">Good Parts</div></div>
+                <div style="background:#FFF7ED; border:1px solid #FED7AA; border-radius:8px; padding:6px; text-align:center;"><div style="font-size:16px; font-weight:800; color:#EA580C;">3</div><div style="font-size:8px; color:#EA580C; font-weight:600;">Minor Issues</div></div>
+                <div style="background:#FEF2F2; border:1px solid #FECACA; border-radius:8px; padding:6px; text-align:center;"><div style="font-size:16px; font-weight:800; color:#DC2626;">1</div><div style="font-size:8px; color:#DC2626; font-weight:600;">Needs Fix</div></div>
+              </div>
+              <div style="font-weight:700; font-size:12px; color:#0F172A; margin-bottom:7px;">&#128663; Exterior Body</div>
+              <div style="background:#fff; border-radius:10px; border:1px solid #E2E8F0; margin-bottom:10px; overflow:hidden;">
+                <div style="padding:6px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#128737; Front Bumper</span><span style="color:#EA580C; font-weight:600; background:#FFF7ED; padding:1px 7px; border-radius:10px; font-size:9px;">Minor Scratch</span></div>
+                <div style="padding:6px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#128737; Back Bumper</span><span style="color:#166534; font-weight:600; background:#F0FDF4; padding:1px 7px; border-radius:10px; font-size:9px;">Good</span></div>
+                <div style="padding:6px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#128682; Front Left Door</span><span style="color:#EA580C; font-weight:600; background:#FFF7ED; padding:1px 7px; border-radius:10px; font-size:9px;">Minor Dent</span></div>
+                <div style="padding:6px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#128682; Back Right Door</span><span style="color:#166534; font-weight:600; background:#F0FDF4; padding:1px 7px; border-radius:10px; font-size:9px;">Good</span></div>
+                <div style="padding:6px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#128682; Back Door Left</span><span style="color:#166534; font-weight:600; background:#F0FDF4; padding:1px 7px; border-radius:10px; font-size:9px;">Good</span></div>
+                <div style="padding:6px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#128682; Back Door Right</span><span style="color:#166534; font-weight:600; background:#F0FDF4; padding:1px 7px; border-radius:10px; font-size:9px;">Good</span></div>
+                <div style="padding:6px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#128297; Fender Left</span><span style="color:#EA580C; font-weight:600; background:#FFF7ED; padding:1px 7px; border-radius:10px; font-size:9px;">Minor Scratch</span></div>
+                <div style="padding:6px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#128297; Fender Right</span><span style="color:#166534; font-weight:600; background:#F0FDF4; padding:1px 7px; border-radius:10px; font-size:9px;">Good</span></div>
+                <div style="padding:6px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#128208; Quarter Panel Left</span><span style="color:#166534; font-weight:600; background:#F0FDF4; padding:1px 7px; border-radius:10px; font-size:9px;">Good</span></div>
+                <div style="padding:6px 10px; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#128208; Quarter Panel Right</span><span style="color:#166534; font-weight:600; background:#F0FDF4; padding:1px 7px; border-radius:10px; font-size:9px;">Good</span></div>
+              </div>
+              <div style="font-weight:700; font-size:12px; color:#0F172A; margin-bottom:7px;">&#128161; Lights &amp; Signals</div>
+              <div style="background:#fff; border-radius:10px; border:1px solid #E2E8F0; margin-bottom:10px; overflow:hidden;">
+                <div style="padding:6px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#128161; Headlight Left</span><span style="color:#166534; font-weight:600; background:#F0FDF4; padding:1px 7px; border-radius:10px; font-size:9px;">Good</span></div>
+                <div style="padding:6px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#128161; Headlight Right</span><span style="color:#166534; font-weight:600; background:#F0FDF4; padding:1px 7px; border-radius:10px; font-size:9px;">Good</span></div>
+                <div style="padding:6px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#128308; Tail Light Left</span><span style="color:#166534; font-weight:600; background:#F0FDF4; padding:1px 7px; border-radius:10px; font-size:9px;">Good</span></div>
+                <div style="padding:6px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#128308; Tail Light Right</span><span style="color:#DC2626; font-weight:600; background:#FEF2F2; padding:1px 7px; border-radius:10px; font-size:9px;">Cracked</span></div>
+                <div style="padding:6px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#127787; Fog Light Left</span><span style="color:#166534; font-weight:600; background:#F0FDF4; padding:1px 7px; border-radius:10px; font-size:9px;">Good</span></div>
+                <div style="padding:6px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#127787; Fog Light Right</span><span style="color:#166534; font-weight:600; background:#F0FDF4; padding:1px 7px; border-radius:10px; font-size:9px;">Good</span></div>
+                <div style="padding:6px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#128993; Indicator Front Left</span><span style="color:#166534; font-weight:600; background:#F0FDF4; padding:1px 7px; border-radius:10px; font-size:9px;">Good</span></div>
+                <div style="padding:6px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#128993; Indicator Front Right</span><span style="color:#166534; font-weight:600; background:#F0FDF4; padding:1px 7px; border-radius:10px; font-size:9px;">Good</span></div>
+                <div style="padding:6px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#128993; Indicator Back Left</span><span style="color:#166534; font-weight:600; background:#F0FDF4; padding:1px 7px; border-radius:10px; font-size:9px;">Good</span></div>
+                <div style="padding:6px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#128993; Indicator Back Right</span><span style="color:#DC2626; font-weight:600; background:#FEF2F2; padding:1px 7px; border-radius:10px; font-size:9px;">Not Working</span></div>
+                <div style="padding:6px 10px; border-bottom:1px solid #F1F5F9; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#129388; OVRM Left</span><span style="color:#166534; font-weight:600; background:#F0FDF4; padding:1px 7px; border-radius:10px; font-size:9px;">Good</span></div>
+                <div style="padding:6px 10px; display:flex; justify-content:space-between; font-size:10px;"><span style="font-weight:600;">&#129388; OVRM Right</span><span style="color:#166534; font-weight:600; background:#F0FDF4; padding:1px 7px; border-radius:10px; font-size:9px;">Good</span></div>
+              </div>
+              <div style="font-weight:700; font-size:12px; color:#0F172A; margin-bottom:7px;">&#128221; Inspector Remarks</div>
+              <div style="background:#FEF2F2; border:1px solid #FECACA; border-radius:8px; padding:10px; margin-bottom:12px;">
+                <div style="font-size:10px; color:#450A0A; line-height:1.5; text-align:justify;">Front bumper has minor scratch on lower lip. Front left door has a small dent near the handle. Tail light right is cracked. Rear right indicator is not working &mdash; needs replacement.</div>
+              </div>
+              <button style="width:100%; padding:10px; border:1px solid #166534; background:#F0FDF4; color:#166534; border-radius:8px; font-weight:700; font-size:11px; cursor:pointer;">&#128229; Download Report (PDF)</button>
+              <div style="text-align:center; font-size:9px; color:#94A3B8; margin-top:8px;">&#128274; Read-only view for Customer</div>
+            </div>
+          </div>
+          <p class="phone-label">4. Customer &mdash; Read-Only View</p>
         </div>
 
       </div>
@@ -3698,165 +3392,180 @@
   </div>
 
   <style>
-    /* Role-based toggle logic for Inspection Screens */
-    .role-edit .view-el {
-      display: none !important;
-    }
-
-    .role-edit .edit-el {
-      display: block !important;
-    }
-
-    .role-view .view-el {
-      display: block !important;
-    }
-
-    .role-view .edit-el {
-      display: none !important;
-    }
-
-    /* Exception for inline elements */
-    span.view-el,
-    div.view-el {
-      display: block;
-    }
+    .role-edit .view-el { display: none !important; }
+    .role-edit .edit-el { display: block !important; }
+    .role-view .view-el { display: block !important; }
+    .role-view .edit-el { display: none !important; }
+    span.view-el, div.view-el { display: block; }
   </style>
 
   <script>
     function toggleRole(role, btn) {
       var container = document.getElementById('inspection-view-container');
-      if (role === 'edit') {
-        container.classList.remove('role-view');
-        container.classList.add('role-edit');
-      } else {
-        container.classList.remove('role-edit');
-        container.classList.add('role-view');
-      }
-
+      if (role === 'edit') { container.classList.remove('role-view'); container.classList.add('role-edit'); }
+      else { container.classList.remove('role-edit'); container.classList.add('role-view'); }
       var btns = btn.parentNode.querySelectorAll('.role-btn');
-      btns.forEach(b => {
-        b.classList.remove('active');
-        b.style.background = 'transparent';
-        b.style.color = 'var(--text2)';
-      });
+      btns.forEach(function(b) { b.classList.remove('active'); b.style.background = 'transparent'; b.style.color = 'var(--text2)'; });
       btn.classList.add('active');
-      if (role === 'edit') {
-        btn.style.background = 'var(--blue)';
-        btn.style.color = '#fff';
-      } else {
-        btn.style.background = '#10B981';
-        btn.style.color = '#fff';
-      }
+      if (role === 'edit') { btn.style.background = 'var(--blue)'; btn.style.color = '#fff'; }
+      else { btn.style.background = '#10B981'; btn.style.color = '#fff'; }
     }
   </script>
-
-
-  <!-- ╔════════════════════════════════════════════════════════════╗
-     ║  MODULE 6 — MARKET LEADERS / TOP SELLING                 ║
-     ╚════════════════════════════════════════════════════════════╝ -->
   <div class="module-content" id="module-topselling">
     <div class="flow-section" id="top-selling">
       <div class="flow-label">
         <div class="flow-label-dot">1</div>
         <div>
           <div class="flow-label-text">Top Selling & Market Insights</div>
-          <div class="flow-label-sub">Detailed statistics, mathematical percentages, and remaining stock of top performing cars.</div>
+          <div class="flow-label-sub">Detailed statistics, mathematical percentages, and remaining stock of top
+            performing cars.</div>
         </div>
       </div>
-      
+
       <div class="phones-row">
         <div class="phone-wrapper">
           <div class="phone" style="height:auto; min-height:600px;">
             <div class="screen-badge">#1</div>
-            <div class="status-bar"><span>10:30</span><div class="status-icons">📶 🔋 98%</div></div>
-            <div class="app-header">
-               <div class="header-icon">←</div>
-               <div class="header-title">Market Analytics</div>
-               <div class="header-icon">⋮</div>
+            <div class="status-bar"><span>10:30</span>
+              <div class="status-icons">📶 🔋 98%</div>
             </div>
-            
-            <div class="screen-body" style="padding:16px;">
-               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-                 <h2 style="margin:0; font-size:18px; color:#0f172a;">🏆 Market Leaders</h2>
-                 <span style="font-size:10px; background:#EFF6FF; color:#2563EB; padding:4px 8px; border-radius:12px; font-weight:700;">Live Stats</span>
-               </div>
-               
-               <style>
-               @keyframes progressShine { 0% { transform: translateX(-100%); } 100% { transform: translateX(200%); } }
-               </style>
-               
-               <!-- Number 1 Card -->
-               <div style="background:linear-gradient(135deg, #1e293b, #0f172a); border-radius:16px; padding:16px; margin-bottom:16px; color:#fff; box-shadow:0 8px 16px rgba(0,0,0,0.15);">
-                 <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-                   <div>
-                     <div style="display:inline-block; background:rgba(255,255,255,0.1); padding:4px 8px; border-radius:6px; font-size:9px; font-weight:800; color:#FDE047; margin-bottom:6px; border:1px solid rgba(253,224,71,0.3); text-transform:uppercase; letter-spacing:0.5px;">#1 HIGHEST SELLING</div>
-                     <div style="font-size:18px; font-weight:800; margin-bottom:4px; letter-spacing:-0.5px;">Maruti Swift VXi</div>
-                     <div style="font-size:11px; color:#94A3B8;">Most demanded hatchback</div>
-                   </div>
-                   <div style="font-size:32px; background:rgba(255,255,255,0.1); width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center;">🚗</div>
-                 </div>
-                 
-                 <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:12px; margin-top:16px;">
-                   <div style="display:flex; justify-content:space-between; font-size:11px; margin-bottom:8px;">
-                     <span style="color:#CBD5E1;">Stock Sold (<span style="color:#FCD34D;font-weight:700;">83%</span>)</span>
-                     <span style="font-weight:700; color:#10B981;">Fast Selling 🔥</span>
-                   </div>
-                   
-                   <!-- Progress Bar -->
-                   <div style="height:8px; background:rgba(255,255,255,0.1); border-radius:4px; margin-bottom:10px; position:relative;">
-                     <div style="height:100%; width:83%; background:linear-gradient(90deg, #10B981, #34D399); border-radius:4px; position:relative; overflow:hidden;">
-                       <div style="position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent); animation:progressShine 2s infinite;"></div>
-                     </div>
-                   </div>
-                   
-                   <div style="display:flex; justify-content:space-between; font-size:10px; color:#94A3B8;">
-                     <div style="text-align:center;"><div style="color:#fff; font-weight:800; font-size:14px; margin-bottom:2px;">1,245</div><div style="text-transform:uppercase; font-size:8px;">Sold</div></div>
-                     <div style="text-align:center;"><div style="color:#fff; font-weight:800; font-size:14px; margin-bottom:2px;">255</div><div style="text-transform:uppercase; font-size:8px;">Remaining</div></div>
-                     <div style="text-align:center; padding-left:12px; border-left:1px solid rgba(255,255,255,0.1);"><div style="color:#10B981; font-weight:800; font-size:14px; margin-bottom:2px;">1,500</div><div style="text-transform:uppercase; font-size:8px; color:#CBD5E1;">Total</div></div>
-                   </div>
-                 </div>
-               </div>
+            <div class="app-header">
+              <div class="header-icon">←</div>
+              <div class="header-title">Market Analytics</div>
+              <div class="header-icon">⋮</div>
+            </div>
 
-               <h3 style="font-size:14px; margin:20px 0 12px 0; color:#334155;">Other Trending Models</h3>
-               
-               <!-- Number 2 Card -->
-               <div style="border:1px solid #E2E8F0; background:#F8FAFC; border-radius:12px; padding:12px; margin-bottom:12px; box-shadow:0 2px 4px rgba(0,0,0,0.02);">
-                  <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-                    <div style="font-size:10px; font-weight:800; color:#A16207; background:#FEFCE8; padding:4px 8px; border-radius:4px; border:1px solid #FEF08A;">#2 TRENDING ⭐</div>
-                    <div style="font-size:20px;">🚙</div>
+            <div class="screen-body" style="padding:16px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                <h2 style="margin:0; font-size:18px; color:#0f172a;">🏆 Market Leaders</h2>
+                <span
+                  style="font-size:10px; background:#EFF6FF; color:#2563EB; padding:4px 8px; border-radius:12px; font-weight:700;">Live
+                  Stats</span>
+              </div>
+
+              <style>
+                @keyframes progressShine {
+                  0% {
+                    transform: translateX(-100%);
+                  }
+
+                  100% {
+                    transform: translateX(200%);
+                  }
+                }
+              </style>
+
+              <!-- Number 1 Card -->
+              <div
+                style="background:linear-gradient(135deg, #1e293b, #0f172a); border-radius:16px; padding:16px; margin-bottom:16px; color:#fff; box-shadow:0 8px 16px rgba(0,0,0,0.15);">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                  <div>
+                    <div
+                      style="display:inline-block; background:rgba(255,255,255,0.1); padding:4px 8px; border-radius:6px; font-size:9px; font-weight:800; color:#FDE047; margin-bottom:6px; border:1px solid rgba(253,224,71,0.3); text-transform:uppercase; letter-spacing:0.5px;">
+                      #1 HIGHEST SELLING</div>
+                    <div style="font-size:18px; font-weight:800; margin-bottom:4px; letter-spacing:-0.5px;">Maruti Swift
+                      VXi</div>
+                    <div style="font-size:11px; color:#94A3B8;">Most demanded hatchback</div>
                   </div>
-                  <div style="font-size:14px; font-weight:700; color:#0f172a; margin-bottom:12px;">Hyundai Creta</div>
-                  <div style="height:6px; background:#E2E8F0; border-radius:3px; margin-bottom:8px;">
-                    <div style="height:100%; width:65%; background:linear-gradient(90deg, #F59E0B, #FBBF24); border-radius:3px;"></div>
+                  <div
+                    style="font-size:32px; background:rgba(255,255,255,0.1); width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center;">
+                    🚗</div>
+                </div>
+
+                <div
+                  style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:12px; margin-top:16px;">
+                  <div style="display:flex; justify-content:space-between; font-size:11px; margin-bottom:8px;">
+                    <span style="color:#CBD5E1;">Stock Sold (<span
+                        style="color:#FCD34D;font-weight:700;">83%</span>)</span>
+                    <span style="font-weight:700; color:#10B981;">Fast Selling 🔥</span>
                   </div>
-                  <div style="display:flex; justify-content:space-between; font-size:10px; color:#64748B;">
-                    <span>Sold: <b style="color:#0F172A; font-size:11px;">982</b> (65%)</span>
-                    <span>Left: <b style="color:#0F172A; font-size:11px;">518</b></span>
+
+                  <!-- Progress Bar -->
+                  <div
+                    style="height:8px; background:rgba(255,255,255,0.1); border-radius:4px; margin-bottom:10px; position:relative;">
+                    <div
+                      style="height:100%; width:83%; background:linear-gradient(90deg, #10B981, #34D399); border-radius:4px; position:relative; overflow:hidden;">
+                      <div
+                        style="position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent); animation:progressShine 2s infinite;">
+                      </div>
+                    </div>
                   </div>
-               </div>
-               
-               <!-- Number 3 Card -->
-               <div style="border:1px solid #E2E8F0; background:#fff; border-radius:12px; padding:12px; box-shadow:0 2px 4px rgba(0,0,0,0.02);">
-                  <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-                    <div style="font-size:10px; font-weight:800; color:#334155; background:#F1F5F9; padding:4px 8px; border-radius:4px; border:1px solid #E2E8F0;">#3 POPULAR 👍</div>
-                    <div style="font-size:20px;">🚘</div>
+
+                  <div style="display:flex; justify-content:space-between; font-size:10px; color:#94A3B8;">
+                    <div style="text-align:center;">
+                      <div style="color:#fff; font-weight:800; font-size:14px; margin-bottom:2px;">1,245</div>
+                      <div style="text-transform:uppercase; font-size:8px;">Sold</div>
+                    </div>
+                    <div style="text-align:center;">
+                      <div style="color:#fff; font-weight:800; font-size:14px; margin-bottom:2px;">255</div>
+                      <div style="text-transform:uppercase; font-size:8px;">Remaining</div>
+                    </div>
+                    <div style="text-align:center; padding-left:12px; border-left:1px solid rgba(255,255,255,0.1);">
+                      <div style="color:#10B981; font-weight:800; font-size:14px; margin-bottom:2px;">1,500</div>
+                      <div style="text-transform:uppercase; font-size:8px; color:#CBD5E1;">Total</div>
+                    </div>
                   </div>
-                  <div style="font-size:14px; font-weight:700; color:#0f172a; margin-bottom:12px;">Tata Nexon</div>
-                  <div style="height:6px; background:#E2E8F0; border-radius:3px; margin-bottom:8px;">
-                    <div style="height:100%; width:50%; background:linear-gradient(90deg, #64748B, #94A3B8); border-radius:3px;"></div>
+                </div>
+              </div>
+
+              <h3 style="font-size:14px; margin:20px 0 12px 0; color:#334155;">Other Trending Models</h3>
+
+              <!-- Number 2 Card -->
+              <div
+                style="border:1px solid #E2E8F0; background:#F8FAFC; border-radius:12px; padding:12px; margin-bottom:12px; box-shadow:0 2px 4px rgba(0,0,0,0.02);">
+                <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                  <div
+                    style="font-size:10px; font-weight:800; color:#A16207; background:#FEFCE8; padding:4px 8px; border-radius:4px; border:1px solid #FEF08A;">
+                    #2 TRENDING ⭐</div>
+                  <div style="font-size:20px;">🚙</div>
+                </div>
+                <div style="font-size:14px; font-weight:700; color:#0f172a; margin-bottom:12px;">Hyundai Creta</div>
+                <div style="height:6px; background:#E2E8F0; border-radius:3px; margin-bottom:8px;">
+                  <div
+                    style="height:100%; width:65%; background:linear-gradient(90deg, #F59E0B, #FBBF24); border-radius:3px;">
                   </div>
-                  <div style="display:flex; justify-content:space-between; font-size:10px; color:#64748B;">
-                    <span>Sold: <b style="color:#0F172A; font-size:11px;">750</b> (50%)</span>
-                    <span>Left: <b style="color:#0F172A; font-size:11px;">750</b></span>
+                </div>
+                <div style="display:flex; justify-content:space-between; font-size:10px; color:#64748B;">
+                  <span>Sold: <b style="color:#0F172A; font-size:11px;">982</b> (65%)</span>
+                  <span>Left: <b style="color:#0F172A; font-size:11px;">518</b></span>
+                </div>
+              </div>
+
+              <!-- Number 3 Card -->
+              <div
+                style="border:1px solid #E2E8F0; background:#fff; border-radius:12px; padding:12px; box-shadow:0 2px 4px rgba(0,0,0,0.02);">
+                <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                  <div
+                    style="font-size:10px; font-weight:800; color:#334155; background:#F1F5F9; padding:4px 8px; border-radius:4px; border:1px solid #E2E8F0;">
+                    #3 POPULAR 👍</div>
+                  <div style="font-size:20px;">🚘</div>
+                </div>
+                <div style="font-size:14px; font-weight:700; color:#0f172a; margin-bottom:12px;">Tata Nexon</div>
+                <div style="height:6px; background:#E2E8F0; border-radius:3px; margin-bottom:8px;">
+                  <div
+                    style="height:100%; width:50%; background:linear-gradient(90deg, #64748B, #94A3B8); border-radius:3px;">
                   </div>
-               </div>
-               
+                </div>
+                <div style="display:flex; justify-content:space-between; font-size:10px; color:#64748B;">
+                  <span>Sold: <b style="color:#0F172A; font-size:11px;">750</b> (50%)</span>
+                  <span>Left: <b style="color:#0F172A; font-size:11px;">750</b></span>
+                </div>
+              </div>
+
             </div>
             <div class="bottom-nav">
-              <div class="nav-item"><div class="nav-icon">🏠</div>Home</div>
-              <div class="nav-item"><div class="nav-icon">🔍</div>Search</div>
-              <div class="nav-item active"><div class="nav-icon">📈</div>Market</div>
-              <div class="nav-item"><div class="nav-icon">👤</div>Profile</div>
+              <div class="nav-item">
+                <div class="nav-icon">🏠</div>Home
+              </div>
+              <div class="nav-item">
+                <div class="nav-icon">🔍</div>Search
+              </div>
+              <div class="nav-item active">
+                <div class="nav-icon">📈</div>Market
+              </div>
+              <div class="nav-item">
+                <div class="nav-icon">👤</div>Profile
+              </div>
             </div>
           </div>
           <p class="phone-label">Top Selling Dashboard</p>
